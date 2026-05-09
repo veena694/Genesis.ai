@@ -1,0 +1,18 @@
+{
+  "name": "genforge-ai",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w web\"",
+    "clean": "rimraf node_modules apps/web/node_modules apps/web/.next apps/server/node_modules apps/server/dist",
+    "build": "npm run build --workspaces --if-present",
+    "start": "npm run start --workspaces --if-present"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "rimraf": "^6.1.3"
+  }
+}
